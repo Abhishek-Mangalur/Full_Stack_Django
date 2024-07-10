@@ -4,7 +4,7 @@
             {% csrf_token %} 
             Student Name
             <select name="sname">
-                {%for student in students %}
+                {% for student in students %}
                     <option value="{{student.id}}">{{student.student_name}}</option>
                 {% endfor %}
             </select><br> 
