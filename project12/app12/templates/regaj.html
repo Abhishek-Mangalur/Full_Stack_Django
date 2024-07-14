@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form method="POST" action="">
+        {% csrf_token %}
+        Student Name
+        <select name="sname" id="sname">
+            {% for student in students %}
+                <option value="{{ student.id }}">{{ student.student_name }}</option>
+            {% endfor %}
+        </select><br>
+        
+        Course Name
+        <select name="cname" id="cname">
+            {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.course_name }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <input type="button" value="Enroll" id="ebtn"><br><br>
+        <span id="ans"></span>
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            $("#ebtn").click(function(){
+                var sname = $("#sname").val();
+                var cname = $("#cname").val();
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'regaj' %}",
+                    data: {
+                        sname: sname,
+                        cname: cname,
+                        csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()
+                    },
+                    success: function(response){
+                        $("#ans").html(response);
+                    },
+                    error: function(xhr, textStatus, errorThrown){
+                        console.error("AJAX Error:", errorThrown);
+                        $("#ans").html("AJAX Error occurred. Please try again later.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
