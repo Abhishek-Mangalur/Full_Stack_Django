@@ -1,0 +1,22 @@
+<html>
+<body>
+    {% if student_list %}
+    <table border="1">
+        <tr>
+            <th>Student Name</th>
+            <th>Student USN</th>
+            <th>Sem</th>
+        </tr>
+        {% for student in student_list %} 
+        <tr>
+            <td>{{ student.student_name }}</td>
+            <td>{{ student.student_usn }}</td>
+            <td>{{ student.student_sem }}</td>
+        </tr>
+        {% endfor %} 
+    </table>
+    {% else %}
+        <h1>No Students Enrolled</h1>
+    {% endif %} 
+</body>
+</html>
