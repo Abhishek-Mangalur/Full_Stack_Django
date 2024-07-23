@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Finder</title>
+</head>
+<body>
+    <h1>Mode Finder</h1>
+    <p>Input Numbers: {{ num_list }}</p>
+    {% if mode %}
+    <p>Mode: {{ mode }}</p>
+    {% else %}
+    <p>No numbers provided.</p>
+    {% endif %}
+</body>
+</html>
