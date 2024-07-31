@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <h1>Square Pairs</h1>
+    <table border="1">
+        <tr>
+            <th>Number</th>
+            <th>Square of Number</th>
+        </tr>
+        {% for pair in pairs %}
+        <tr>
+            <td>{{ pair.1 }}</td>
+            <td>{{ pair.3 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
