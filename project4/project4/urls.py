@@ -16,9 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app4.views import current_datetime
-from app4.views import fhrsa
-from app4.views import fhrsb
+from app4.views import current_datetime, fhrsa, fhrsb
 
 urlpatterns = [
     path('admin/', admin.site.urls),
