@@ -20,7 +20,7 @@ from app6.views import home, aboutus, contactus
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('home/', home),
     path('aboutus/', aboutus),
     path('contactus/', contactus),
 ]
