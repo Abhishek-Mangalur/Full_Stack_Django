@@ -1,8 +1,6 @@
 from django.contrib import admin
 from app8.models import Course, Student
 
-# Register your models here. 
-# admin.site.register(Student) 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('student_name','student_usn','student_sem') 
